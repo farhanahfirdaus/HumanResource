@@ -1,19 +1,18 @@
 -- Data Cleaning
+-- Update and Alter Table - Add, Change, Modify Column
+-- Convert data type
 
 Select *
 From hr;
 
--- Change column name
 Alter Table hr
 Change Column ï»¿id emp_id varchar(20) null;
 
--- To check data type
 Describe hr;
 
 Select termdate
 From hr;
 
--- to convert data to date form
 Update hr
 Set birthdate = Case
 	When birthdate like '%/%' 
@@ -23,7 +22,6 @@ Set birthdate = Case
 	Else Null
 End;
 
--- to change date data type
 Alter Table hr
 Modify Column birthdate Date;
 
@@ -77,6 +75,7 @@ Select Count(*)
 From hr
 Where age < 18;
 
+-- Exploratory Data Analysis
 -- Questions
 -- 1. What is the gender breakdown of employees in the company?
 
